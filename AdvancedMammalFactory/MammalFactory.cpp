@@ -8,49 +8,48 @@ MammalFactory::MammalFactory(){
 }
 
 
-/*
+
 void MammalFactory::listMammals(){
-	for (Mammal m : mammals){
+	std::cout << mammals.size() << "\n";
 
+	for (Mammal *m : mammals){
+		std::cout << m->getName();
 	}
+	
 }
-*/
-
 
 void MammalFactory::startCatAssembly(){
 	catBuilding = true;
 	std::thread thread(&MammalFactory::buildCats, this);
 	thread.detach();
-	//catBuilder = &thread;
 }
 
 void MammalFactory::stopCatAssembly(){
 	catBuilding = false;
-	//catBuilder->detach();
 }
 
 void MammalFactory::startDogAssembly(){
 	dogBuilding = true;
 	std::thread thread(&MammalFactory::buildDogs, this);
 	thread.detach();
-	//dogBuilder = &thread;
 }
 
 void MammalFactory::stopDogAssembly(){
 	dogBuilding = false;
-	//dogBuilder->detach();
 }
 
 void MammalFactory::buildCats(){
-	while (catBuilding)
+	while (catCount < 10)
 	{
 		mammals.push_back(new Cat("Frisky"));
+		catCount++;
 	}
 }
 
 void MammalFactory::buildDogs(){
-	while (dogBuilding)
+	while (dogCount < 10)
 	{
 		mammals.push_back(new Dog("Fido"));
+		dogCount++;
 	}
 }

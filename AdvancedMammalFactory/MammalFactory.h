@@ -1,4 +1,4 @@
-//TODO to figure out why this is needed here and not coming  from the cpp file.
+//TODO: to figure out why this is needed here and not coming  from the cpp file.
 #include "Mammal.h"
 
 class MammalFactory
@@ -10,8 +10,8 @@ private:
 	std::vector<Mammal*> mammals;
 	bool dogBuilding;
 	bool catBuilding;
-	int catCount;
-	int dogCount;
+	int catCount=0;
+	int dogCount=0;
 	void buildDogs();
 	void buildCats();
 public:

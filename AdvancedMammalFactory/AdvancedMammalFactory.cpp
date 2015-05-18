@@ -16,7 +16,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	factory.startDogAssembly();
 	factory.stopCatAssembly();
 	factory.stopDogAssembly();
-
+	
+	factory.listMammals();
+	int derp;
+	std::cin >> derp;
 	return 0;
 }
 
