@@ -1,11 +1,20 @@
+#ifndef MAMMAL_H
+#define MAMMAL_H
+
 class Mammal
 {
 public:
-	float weight;
-	std::string name;
 	Mammal();
-	Mammal(std::string);
+	Mammal(std::string name);
 	~Mammal();
 	void makeNoise();
+
+protected:
+	float weight;
+	std::string name;
 };
 
+
+
+
+#endif

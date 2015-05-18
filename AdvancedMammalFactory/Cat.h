@@ -1,3 +1,7 @@
+#ifndef CAT_H
+#define CAT_H
+
+
 #pragma once
 #include "Mammal.h"
 
@@ -10,3 +14,6 @@ public:
 	void makeNoise();
 };
 
+
+
+#endif 

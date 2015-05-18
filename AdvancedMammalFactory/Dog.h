@@ -1,3 +1,7 @@
+#ifndef DOG_H
+#define DOG_H
+
+
 #pragma once
 #include "Mammal.h"
 
@@ -11,3 +15,4 @@ public:
 	void makeNoise();
 };
 
+#endif
