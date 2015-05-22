@@ -4,22 +4,25 @@
 #include "stdafx.h"
 #include "MammalFactory.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	//This is on the stack of main.
 	MammalFactory factory = MammalFactory();
 
 	//This is on the heap.
-	MammalFactory *heapFactory = new MammalFactory();
+	//MammalFactory* heapFactory = new MammalFactory();
 
 	factory.startCatAssembly();
 	factory.startDogAssembly();
-	factory.stopCatAssembly();
-	factory.stopDogAssembly();
-	
-	factory.listMammals();
+	//factory.stopCatAssembly();
+	//factory.stopDogAssembly();
+
+
 	int derp;
 	std::cin >> derp;
+
+	factory.listMammals();
+
 	return 0;
 }
 

@@ -9,7 +9,7 @@ Dog::Dog()
 
 Dog::Dog(std::string name)
 {
-	Mammal::Mammal(name);
+	Mammal::name = name;
 	std::cout << " It's a dog.\n";
 }
 
@@ -19,9 +19,5 @@ Dog::~Dog()
 
 
 void Dog::makeNoise(){
-	//Call parent funcion
-	Mammal::makeNoise();
-
-	//Provide Additional features.
-	std::cout << " It barked.\n";
+	std::cout << name << " made some noise, It barked.\n";
 }

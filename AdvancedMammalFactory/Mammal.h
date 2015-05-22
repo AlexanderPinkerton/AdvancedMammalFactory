@@ -7,7 +7,7 @@ public:
 	Mammal();
 	Mammal(std::string name);
 	~Mammal();
-	void makeNoise();
+	virtual void makeNoise();
 
 	//Inline Getter, is this bad practice?
 	std::string getName(){
