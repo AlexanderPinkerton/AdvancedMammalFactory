@@ -3,11 +3,13 @@
 #include "Dog.h"
 #include "MammalFactory.h"
 
+
+std::mutex mutex;
+
 MammalFactory::MammalFactory()
 {
 	std::cout << "A mammal factory has been built.\n";
 }
-
 
 
 void MammalFactory::listMammals()
@@ -46,18 +48,26 @@ void MammalFactory::stopDogAssembly()
 
 void MammalFactory::buildCats()
 {
-	while (catCount < 10)
+	while (catCount < 100)
 	{
+		mutex.lock();
+		//std::unique_ptr<Mammal> newcat(new Mammal);
+        //mammalz.push_back(std::unique_ptr<Mammal>(new Cat("TurboCat")));
+
 		mammals.push_back(new Cat("Frisky"));
 		catCount++;
+		mutex.unlock();
 	}
 }
 
 void MammalFactory::buildDogs()
 {
-	while (dogCount < 10)
+	while (dogCount < 100)
 	{
+		mutex.lock();
 		mammals.push_back(new Dog("Fido"));
 		dogCount++;
+		mutex.unlock();
 	}
 }
+

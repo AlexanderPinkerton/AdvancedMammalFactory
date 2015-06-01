@@ -8,6 +8,7 @@ private:
 	//Mammal mammals[20];
 
 	std::vector<Mammal*> mammals;
+	std::vector<std::unique_ptr<Mammal>> mammalz;
 	bool dogBuilding;
 	bool catBuilding;
 	int catCount=0;

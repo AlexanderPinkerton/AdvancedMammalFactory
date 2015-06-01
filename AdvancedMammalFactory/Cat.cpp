@@ -11,6 +11,7 @@ Cat::Cat(std::string name)
 {
 	Mammal::name = name;
 	std::cout << " It's a cat.\n";
+	makeNoise();
 }
 
 Cat::~Cat()
